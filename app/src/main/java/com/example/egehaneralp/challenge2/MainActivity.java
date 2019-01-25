@@ -1,5 +1,7 @@
 package com.example.egehaneralp.challenge2;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -35,10 +37,13 @@ public class MainActivity extends AppCompatActivity {
 
                                     finish();
                                     moveTaskToBack(true);
+                                    Intent intent = new Intent(Intent.ACTION_DELETE);
+                                    intent.setData(Uri.parse("package:" + getApplicationContext().getPackageName()));
+                                    startActivity(intent);
                                 }
                             }
                         });
-                        
+
 
                     } catch (InterruptedException e) {
                         e.printStackTrace();
